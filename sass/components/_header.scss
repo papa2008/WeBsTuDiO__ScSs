@@ -1,0 +1,124 @@
+header .inner-container {
+    @include flex();
+    @media screen and (max-width: 480px) {
+        min-width: 320px;
+    }
+}
+
+.header {
+    padding: 24px 0;
+    @media screen and (max-width:768px) {
+        padding: 21px 0;
+    }
+    @media screen and (max-width:480px) {
+        padding: 10px 0;
+    }
+    &__menu-btn{
+        display: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        @media screen and (max-width:767px){
+            display: block;
+        }
+    }
+    &__menu-svg{
+        width: 40px;
+        height: 40px;
+        fill: #000;
+    }
+}
+
+.header-right {  
+    @include flex();
+    width: 333px;
+    @media screen and (max-width:1199px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        max-width: 138px;
+    }
+    @media screen and (max-width:767px) {
+        display: none;
+     }
+}
+
+.navigation {
+    width: 285px;
+}
+
+.logo-link {
+    @include fonts(26px, 700);
+    font-family: 'Raleway';
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color:getColor('logo');
+    @media screen and (max-width:768px) {
+        font-size: 24px;
+        letter-spacing: 0.72;
+    }
+    &__web {
+        color:getColor('hover');
+    }
+}
+
+.nav-list {
+    @media screen and (max-width:767px) {
+       display: none;
+    }
+    @include flex();
+    @include fonts($font-weight:500);
+    width: 100%;
+    letter-spacing: 0.02em;
+    &__link{
+        @include fonts($font-weight:500);
+    letter-spacing: 0.02em;
+    color:getColor('title');
+    position: relative;
+    &:hover, &:focus{
+        color:getColor('hover');
+    }
+    &::after {
+        content: "";
+        width: 0;
+        height: 4px;
+        background-color:  getColor('hover'); 
+        border-radius: 2px ;
+        position: absolute;
+        left: 0;
+        top: 45px;
+    }
+    &:hover::after{
+        width: 100%;
+        transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    }
+}
+
+.contact-list-link {
+    @media screen and (max-width:1199px) {
+       letter-spacing: 0.24;
+
+       @include fonts(12px, 500)
+    }
+
+    
+    @include flex();
+    @include fonts($font-weight:500);
+    letter-spacing: 0.02em;
+    color: getColor('text');
+    &:hover {
+        color: getColor('hover');
+        transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }     
+    &__contact-svg {
+        fill: #757575;
+        margin-right:10px;
+     }   
+     &:hover &__contact-svg{
+        fill: #2196F3;
+    }
+}
+
+
+

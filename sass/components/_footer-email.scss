@@ -1,0 +1,88 @@
+.footer-form {
+    width: 100%;
+    min-width: 320px;
+    @include flex($align-items:flex-end);
+    @media screen and (max-width:1199px){
+        @include flex(center, center, column);
+        gap: 20px;
+    }
+    &__label {
+         @include flex($align-items:flex-start, $flex-dir:column);
+         @include fonts($font-weight:700);
+        color: getColor('white');
+    font-family: $primary-font;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+    @media screen and (max-width:1199px){
+        width: 450px;
+        align-items: center;
+        margin: 0;
+    }
+    @media screen and (max-width:480px){
+        width: 100%;
+    }
+    }
+    &__input {
+        width: 358px;
+    height: 50px;
+    background-color: getColor('background-footer');
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    margin-right: 12px;
+    margin-top: 20px;
+    @media screen and (max-width:1199px){
+        width: 450px;
+       
+    }
+    @media screen and (max-width:767px){
+        width: 100%;
+    }
+    @media screen and (max-width:320px){
+        max-width: 290px;
+    }
+    &::placeholder {
+        @include flex(center, $flex-dir:column);
+        @include fonts(14px);
+    width: 47px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.60);
+    font-family: $primary-font;
+    letter-spacing: 0.48px;
+    padding-left: 16px;
+    }
+    
+    }
+    &__btn {
+        @include flex();
+        @include fonts(16px, 700);
+        @extend %btn;
+        width: 200px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: $primary-font;
+    letter-spacing: 0.96px;
+    padding: 0;
+    padding: 10px 28px;
+    transition: transform 500ms ease;
+    @media screen and (max-width:1199px){
+        gap: 12px;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+    }
+    &__svg {
+        fill: getColor('white');
+        margin-left: 10px;
+    }
+}
+
+.footer-email {
+   width: 570px;
+    padding-top: 12px;
+    @media screen and (max-width:1199px){
+        padding: 0;
+    }
+}

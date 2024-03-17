@@ -1,0 +1,113 @@
+.team .inner-container {
+    @media screen and (max-width: 1199px){
+        max-width: 768px;
+    }
+    @media screen and (max-width: 767px){
+        max-width: 480px;
+    }
+    @media screen and (max-width: 480px){
+        min-width: 320px;
+    }
+}
+
+.team{
+    background-color: getColor('box');
+    padding: 94px 0;
+    @media screen and (max-width: 768px){
+        padding: 60px 0;
+    }
+    &__title{
+        @include fonts(36px, 700);
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: getColor('title');
+    margin-bottom: 50px;
+    @media screen and (max-width: 768px){
+        font-size: 28px;
+        letter-spacing: 0.84px;
+        margin-bottom: 30px;
+    }
+    }
+}
+
+.team-list{
+    @include flex();
+    margin: 0 auto;
+    width: 100%;
+    @media screen and (max-width: 1199px){
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    &__card{
+        background-color:getColor('white');
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    padding-bottom: 30px;
+    @media screen and (max-width: 768px){
+        padding-bottom: 24px;
+    }
+    }
+    &__thumb {
+        width: 270px;
+        height: 260px;
+        @media screen and (max-width: 1199px){
+        width: 354px;
+        height: 374px;
+        }
+        @media screen and (max-width: 767px){
+        width: 450px;
+        height: 460px;
+        }
+        @media screen and (max-width: 480px){
+        min-width: 290px;
+        max-width: 450px;
+        width: 100%;
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__title{
+        @include fonts(16px, 500);
+        color: getColor('title');
+        text-align: center;
+        letter-spacing: 0.03em;
+            margin-bottom: 10px;
+            margin-top: 30px
+         }
+    &__text{
+        @include fonts(16px);
+        color: getColor('text');
+        text-align: center;
+        letter-spacing: 0.03em;
+        margin-bottom: 16px;
+            }      
+}
+
+.social-network {
+    @include flex();
+    width: 206px;
+    margin: 0 auto;
+    &__link {
+        fill: getColor('svg');
+     }
+     &__social {
+        @include flex(center);
+        width: 44px;
+        height: 44px;
+        transition: transform 400ms ease;
+        &:hover {
+            border-radius: 50%;
+            background-color:getColor('hover');
+            transform: scale(1.2);
+        }
+        &:hover .social-network__svg {
+            fill: getColor('white');
+        }
+    }
+    
+}
+

@@ -1,0 +1,86 @@
+.projects-list{
+    @include flex($wrap:wrap);
+    width: 100%;
+    gap: 30px;
+    @media screen and (max-width: 480px) {
+        @include flex ($justify-content:center, $wrap:wrap)
+    }
+    &__item{
+        box-sizing: border-box;
+        width: 370px;
+    background-color:getColor('white');
+    border: 1px solid #EEEEEE;
+    padding-bottom: 20px;
+    overflow: hidden;
+    @media screen and (max-width: 1199px) {
+        &:nth-child(1){
+            padding-bottom:56px;
+        }
+        width: 354px;
+        }
+        @media screen and (max-width: 767px) {
+        padding-bottom: 20px;
+        width: 450px;
+        }
+        @media screen and (max-width: 480px) {
+        min-width: 320px;
+        }
+    &:hover .overlay {
+        transform: translateY(0);
+        transition: transform 1s ease;
+    }
+    }
+    &__thumb {
+        width: 370px;
+        height: 294px ;
+        position: relative;
+        margin-bottom: 20px;
+        @media screen and (max-width: 1199px) {
+        width: 354px;
+        }
+        @media screen and (max-width: 767px) {
+        width: 450px;
+        }
+        @media screen and (max-width: 480px) {
+        min-width: 320px;
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    margin-bottom: 20px;
+    }
+    &__title{
+        @include fonts(18px, 700, 36px);
+    letter-spacing: 0.06em;
+    color: getColor('title');
+    margin-bottom: 4px;
+    padding: 0 24px;
+    }
+    &__text{
+        @include fonts(16px, $line-height:30px);
+    letter-spacing: 0.03em;
+    color: getColor('text');
+    padding: 0 24px;
+    }
+    
+}
+
+
+.overlay {
+    width: 100%;
+   height: 100%;
+   background-color: rgba(33, 150, 243, 0.90);
+   position: absolute;
+   top: 0;
+   left: 0;
+    padding: 63px 24px;
+    transform: translateY(-100%);
+    &__text {
+        @include fonts(18px, $line-height:1.55);
+        color:getColor('white');
+    letter-spacing: 0.54px;
+    }
+}

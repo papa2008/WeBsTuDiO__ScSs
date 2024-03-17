@@ -1,0 +1,9 @@
+%btn {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    background: getColor('hover');
+    border: none;
+    border-radius: 4px;
+    color: getColor('white');
+}

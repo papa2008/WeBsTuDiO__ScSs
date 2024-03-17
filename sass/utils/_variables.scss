@@ -1,0 +1,32 @@
+// $color-hover:#2196F3;
+// $color-logo:#000;
+// $color-title:#212121;
+// $color-text:#757575;
+// $color-white-elements:#FFF;
+// $color-svg:#AFB1B8;
+// $overlay-hero:rgba(47, 48, 58, 0.40);
+// $background-color-work: rgba(47, 48, 58, 0.80);
+// $background-color-footer:#2F303A;
+// $background-color-footer-btn:rgba(255, 255, 255, 0.10);
+
+$colors:(
+    'hover':#2196F3,
+    'logo':#000,
+    'title':#212121,
+    'text':#757575,
+    'white':#fff,
+    'svg':#AFB1B8,
+    'overlay-hero':rgba(47, 48, 58, 0.40),
+    'background-work':rgba(47, 48, 58, 0.80),
+    'background-footer':#2F303A,
+    'box':#F5F4FA,
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}
+
+
+
+$primary-font: #{'Roboto', sans-serif};
+$logo-font: #{'Raleway', sans-serif};

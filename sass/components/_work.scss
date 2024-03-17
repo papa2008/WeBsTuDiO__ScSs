@@ -1,0 +1,57 @@
+.work{
+    @media screen and (max-width: 1199px){
+        display: none;
+    }
+    padding-bottom: 94px;
+    &__title{
+        @include fonts(36px, 700);
+        text-align: center;
+    color: getColor('title');
+    }
+}
+
+.work-list{
+    @include flex();
+    margin: 50px auto 0;
+    width: 1200px;
+    position: relative;
+        &__thumb {
+            width: 370px;
+            height: 294px;
+            overflow: hidden;
+            &:nth-child(n)::after {
+                content: "Десктопні додатки";
+                @include flex(center);
+        
+                width: 370px;
+                height: 70px;
+                background-color: getColor('background-work');
+            
+                color: getColor('white');
+            text-align: center;
+            @include fonts($font-weight:700);
+            font-family: $primary-font;
+            font-style: normal;
+            letter-spacing: 0.42px;
+            text-transform: uppercase;
+            
+            position: absolute;
+            bottom: 0;
+            }
+            &:nth-child(2)::after {
+                content: "Мобільні додатки";
+            }
+            &:nth-child(3)::after {
+                content: "Дизайнерські рішення";
+            }   
+        }
+        &__img{
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 500ms ease;
+         }
+         &__thumb:hover &__img{
+            transform: scale(1.2);
+}
+}
